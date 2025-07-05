@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import TransactionForm from '@/components/TransactionForm';
 import TransactionList from '@/components/TransactionList';
 import ExpensesChart from '@/components/ExpensesChart';
+import CategoryPieChart from '@/components/CategoryPieChart';
+import DashboardSummary from '@/components/DashboardSummary';
 
 export default function HomePage() {
 
@@ -38,6 +40,13 @@ export default function HomePage() {
             {/* Main Content */}
             <main className="container mx-auto px-4 py-10 max-w-6xl space-y-8">
 
+                {/* Summary Cards Section */}
+                <section className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+                <h2 className="text-2xl font-semibold mb-4 text-gray-700">Dashboard Summary</h2>
+                    <DashboardSummary data={transactions} />
+                </section>
+
+                {/* Grid Section: Form and Charts */}
                 <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                     {/* Transaction Form */}
@@ -46,12 +55,20 @@ export default function HomePage() {
                         <TransactionForm onAdd={fetchTransactions} />
                     </div>
 
-                    {/* Expenses Chart */}
-                    <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
-                        <h2 className="text-2xl font-semibold mb-4 text-teal-600">Expenses Overview</h2>
-                        <ExpensesChart data={transactions} />
-                    </div>
+                    {/* Charts Section */}
+                    <div className="space-y-6">
+                        {/* Bar Chart */}
+                        <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+                            <h2 className="text-2xl font-semibold mb-4 text-teal-600">Monthly Expenses</h2>
+                            <ExpensesChart data={transactions} />
+                        </div>
 
+                        {/* Pie Chart */}
+                        <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
+                            <h2 className="text-2xl font-semibold mb-4 text-emerald-600">Category Breakdown</h2>
+                            <CategoryPieChart data={transactions} />
+                        </div>
+                    </div>
                 </section>
 
                 {/* Transaction List */}

@@ -3,19 +3,33 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select';
 import { toast } from 'sonner';
 
 export default function TransactionForm({ onAdd }: { onAdd: () => void }) {
 
-    const [form, setForm] = useState({ amount: '', description: '', date: '' });
+    const [form, setForm] = useState({
+        amount: '',
+        description: '',
+        date: '',
+        category: 'Other',
+    });
+
     const [error, setError] = useState('');
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 
         e.preventDefault();
-        const { amount, description, date } = form;
 
-        if (!amount || !description || !date) {
+        const { amount, description, date, category } = form;
+
+        if (!amount || !description || !date || !category) {
             setError('All fields are required');
             return;
         }
@@ -26,10 +40,11 @@ export default function TransactionForm({ onAdd }: { onAdd: () => void }) {
                 amount: parseFloat(amount),
                 description,
                 date,
+                category,
             }),
         });
 
-        setForm({ amount: '', description: '', date: '' });
+        setForm({ amount: '', description: '', date: '', category: 'Other' });
         onAdd();
         toast.success('Transaction added successfully!');
         setError('');
@@ -86,6 +101,27 @@ export default function TransactionForm({ onAdd }: { onAdd: () => void }) {
                 onChange={(e) => setForm({ ...form, description: e.target.value })}
                 className="focus:ring-2 focus:ring-indigo-500"
                 />
+            </div>
+
+            <div className="flex flex-col gap-1">
+                <label htmlFor="category" className="text-sm font-medium text-gray-700">
+                    Category <span className="text-red-500">*</span>
+                </label>
+                <Select
+                value={form.category}
+                onValueChange={(val) => setForm({ ...form, category: val })}
+                >
+                    <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        {['Food', 'Rent', 'Shopping', 'Bills', 'Travel', 'Other'].map((cat) => (
+                            <SelectItem key={cat} value={cat}>
+                                {cat}
+                            </SelectItem>
+                        ))}
+                    </SelectContent>
+                </Select>
             </div>
 
             <Button

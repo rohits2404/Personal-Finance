@@ -1,58 +1,62 @@
-```md
+````md
 # 💰 Walletly: Personal Finance Tracker
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-blue.svg)](https://nextjs.org/)
-[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-green.svg)](https://tailwindcss.com/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-v4-green.svg)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue.svg)](https://www.typescriptlang.org/)
 
-**Walletly** A modern, visually polished and responsive **Personal Finance Tracker** built with Next.js App Router, TailwindCSS v4, TypeScript, MongoDB, Recharts, and shadcn/ui.  
-Track your expenses, view charts, set monthly budgets, and get instant insights.
+**Walletly** is a sleek, responsive and modern **personal finance management** app built using the latest technologies — **Next.js App Router**, **TypeScript**, **Tailwind CSS v4**, **MongoDB**, **Recharts**, and **shadcn/ui**.
+
+Track your income & expenses, visualize monthly trends, set budgets, and gain powerful insights — all in one place.
 
 ---
 
 ## 🌟 Features
 
-- ✨ Add, view, and delete transactions
-- 📊 Monthly bar chart of expenses
-- 🥧 Category-wise pie chart
-- 📋 Dashboard summary with totals and latest transactions
-- 💸 Set monthly budgets for each category
-- ⚖️ Compare Budget vs Actual in a visual chart
-- 💡 Smart insights (Over/Under budget per category)
-- 📅 Monthly selector support
-- 💅 Beautiful UI built with **TailwindCSS + shadcn/ui**
+- ✅ Add, view, and delete income or expense transactions
+- 📊 Interactive monthly **bar chart** for expenses
+- 🥧 **Pie chart** showing category breakdown
+- 🧾 Clean **dashboard summary** with totals and recent entries
+- 💰 Setup **monthly budgets** per category
+- ⚖️ View **Budget vs Actual** comparisons
+- 💡 See **Smart Insights** (over/under budget)
+- 🗓️ Monthly selector support
+- 🎨 Beautiful, responsive UI with TailwindCSS + shadcn/ui
 
 ---
 
 ## 📸 Screenshots
 
-> *(Add your own screenshots here)*
+> _Make sure these images are present inside `public/screens/`._
 
-| Dashboard Summary | Bar + Pie Charts | Budget + Insights |
+| Dashboard Summary | Expenses Charts | Budget & Insights |
 |------------------|------------------|-------------------|
-| ![screenshot1](public/screens/dashboard.png) | ![screenshot2](public/screens/charts.png) | ![screenshot3](public/screens/insights.png) |
+| ![](./public/screens/dashboard.png) | ![](./public/screens/charts.png) | ![](./public/screens/insights.png) |
 
 ---
 
 ## 🧠 Tech Stack
 
-| Technology    | Purpose                        |
-|---------------|--------------------------------|
-| **Next.js 15 App Router** | Routing & frontend framework |
-| **TypeScript**   | Type safety across components |
-| **Tailwind CSS v4** | Utility-first CSS styling |
-| **shadcn/ui**     | UI components with accessibility |
-| **Recharts**      | Bar & pie chart visualizations |
-| **MongoDB**       | Data persistence for budgets & transactions |
-| **Sonner**        | Toast notifications |
+| Tech | Role |
+|------|------|
+| [**Next.js 15 (App Router)**](https://nextjs.org/docs) | Full-stack React framework |
+| [**TypeScript**](https://www.typescriptlang.org/) | Static typing |
+| [**Tailwind CSS v4**](https://tailwindcss.com/) | Modern utility-first CSS |
+| [**shadcn/ui**](https://ui.shadcn.dev/) | Accessible component primitives |
+| [**Recharts**](https://recharts.org/) | Bar & pie chart visualizations |
+| [**MongoDB**](https://www.mongodb.com/) | Database for transactions & budgets |
+| [**Sonner**](https://sonner.emilkowal.dev/) | Toast notifications |
 
 ---
 
 ## 📁 Project Structure
 
-```
-
+```txt
 .
+├── app/
+│   ├── page.tsx               # Main HomePage
+│   ├── globals.css            # Global styles (TailwindCSS included)
+│
 ├── components/
 │   ├── TransactionForm.tsx
 │   ├── TransactionList.tsx
@@ -64,52 +68,49 @@ Track your expenses, view charts, set monthly budgets, and get instant insights.
 │   ├── SpendingInsights.tsx
 │
 ├── types/
-│   └── index.ts
-│
-├── app/
-│   ├── page.tsx ( HomePage)
-|   ├── globals.css (Global Styles)
-|
+│   └── index.ts               # Shared type definitions
 │
 ├── public/
-│   └── screens/ (Add screenshots here)
+│   └── screens/
+│       ├── dashboard.png
+│       ├── charts.png
+│       └── insights.png
 │
 └── README.md
-
 ````
 
 ---
 
-## 🔧 Getting Started
+## 🚀 Getting Started
 
-### 1️⃣ Clone the Repo
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/rohits2404/Personal-Finance.git
+git clone https://github.com/rohits2404/personal-finance.git
 cd personal-finance
-````
+```
 
-### 2️⃣ Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3️⃣ Setup Environment Variables
+### 3. Configure Environment Variables
 
-Create a `.env.local` file:
+Create a `.env.local` file in the root:
 
 ```env
 MONGODB_URI=
 ```
 
-### 4️⃣ Run the Dev Server
+### 4. Start the Dev Server
 
 ```bash
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) to view the app.
+Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
@@ -141,3 +142,15 @@ export interface Budget {
 * [x] Add responsive dashboard layout
 * [x] Budget vs Actual comparison
 * [x] Smart insights section
+* [x] Category-wise pie chart
+
+---
+
+## ❤️ Acknowledgements
+
+* [shadcn/ui](https://ui.shadcn.dev/)
+* [Recharts](https://recharts.org/)
+* [MongoDB Atlas](https://www.mongodb.com/atlas)
+* [Sonner Toast](https://sonner.emilkowal.dev/)
+
+---

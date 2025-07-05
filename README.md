@@ -26,8 +26,6 @@ Track your income & expenses, visualize monthly trends, set budgets, and gain po
 
 ## 📸 Screenshots
 
-> _Make sure these images are present inside `public/screens/`._
-
 | Dashboard Summary | Expenses Charts | Budget & Insights |
 |------------------|------------------|-------------------|
 | ![](./public/screens/dashboard.png) | ![](./public/screens/charts.png) | ![](./public/screens/insights.png) |
@@ -85,7 +83,7 @@ Track your income & expenses, visualize monthly trends, set budgets, and gain po
 ### 1\. Clone the Repository
 
 ```bash
-git clone [https://github.com/rohits2404/personal-finance.git](https://github.com/rohits2404/personal-finance.git)
+git clone https://github.com/rohits2404/personal-finance.git
 cd personal-finance
 ```
 

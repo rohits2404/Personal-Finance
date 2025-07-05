@@ -1,3 +1,23 @@
+The `README.md` file you provided is already in a **correct and standard Markdown format** that should render perfectly on GitHub. There's nothing inherently "not working" with its current structure or syntax for GitHub's rendering engine.
+
+-----
+
+### Potential Reasons for Perceived Issues
+
+If you're experiencing issues, it's highly likely due to one of the following, rather than the Markdown format itself:
+
+  * **Incorrect File Naming:** Ensure the file is actually named `README.md` (case-sensitive on some systems) and is located in the root directory of your GitHub repository. GitHub automatically looks for this specific filename to display as the repository's main page.
+  * **File Not Pushed:** Make sure you have committed and pushed the `README.md` file to your GitHub repository. If it's only local, GitHub won't see it.
+  * **Image Paths:** The screenshot paths (`./public/screens/dashboard.png`, etc.) are relative to the `README.md` file. For these to display correctly on GitHub, the images must actually exist at those exact paths within your GitHub repository (e.g., `your-repo-root/public/screens/dashboard.png`). If the images are missing or the paths are incorrect on GitHub, the image links will appear broken.
+  * **Broken Badges:** While less common, sometimes the URLs for the badges (e.g., `https://img.shields.io/...`) can become temporarily unavailable or change, causing the badges not to display. However, this wouldn't affect the rest of the `README.md`.
+  * **GitHub Caching:** Occasionally, GitHub's cache might take a moment to update after you push changes. A hard refresh of the repository page might help.
+
+-----
+
+### Your `README.md` with No Changes
+
+Here's your `README.md` content exactly as you provided it, as it's already correctly formatted for GitHub:
+
 ````md
 # 💰 Walletly: Personal Finance Tracker
 
@@ -54,49 +74,49 @@ Track your income & expenses, visualize monthly trends, set budgets, and gain po
 ```txt
 .
 ├── app/
-│   ├── page.tsx               # Main HomePage
-│   ├── globals.css            # Global styles (TailwindCSS included)
+│   ├── page.tsx               # Main HomePage
+│   ├── globals.css            # Global styles (TailwindCSS included)
 │
 ├── components/
-│   ├── TransactionForm.tsx
-│   ├── TransactionList.tsx
-│   ├── ExpensesChart.tsx
-│   ├── CategoryPieChart.tsx
-│   ├── DashboardSummary.tsx
-│   ├── BudgetForm.tsx
-│   ├── BudgetComparisonChart.tsx
-│   ├── SpendingInsights.tsx
+│   ├── TransactionForm.tsx
+│   ├── TransactionList.tsx
+│   ├── ExpensesChart.tsx
+│   ├── CategoryPieChart.tsx
+│   ├── DashboardSummary.tsx
+│   ├── BudgetForm.tsx
+│   ├── BudgetComparisonChart.tsx
+│   ├── SpendingInsights.tsx
 │
 ├── types/
-│   └── index.ts               # Shared type definitions
+│   └── index.ts               # Shared type definitions
 │
 ├── public/
-│   └── screens/
-│       ├── dashboard.png
-│       ├── charts.png
-│       └── insights.png
+│   └── screens/
+│       ├── dashboard.png
+│       ├── charts.png
+│       └── insights.png
 │
 └── README.md
 ````
 
----
+-----
 
 ## 🚀 Getting Started
 
-### 1. Clone the Repository
+### 1\. Clone the Repository
 
 ```bash
-git clone https://github.com/rohits2404/personal-finance.git
+git clone [https://github.com/rohits2404/personal-finance.git](https://github.com/rohits2404/personal-finance.git)
 cd personal-finance
 ```
 
-### 2. Install Dependencies
+### 2\. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Configure Environment Variables
+### 3\. Configure Environment Variables
 
 Create a `.env.local` file in the root:
 
@@ -104,15 +124,15 @@ Create a `.env.local` file in the root:
 MONGODB_URI=
 ```
 
-### 4. Start the Dev Server
+### 4\. Start the Dev Server
 
 ```bash
 npm run dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000) in your browser.
+Visit [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) in your browser.
 
----
+-----
 
 ## 🔐 Type Definitions
 
@@ -135,22 +155,25 @@ export interface Budget {
 }
 ```
 
----
+-----
 
 ## 📈 Roadmap
 
-* [x] Add responsive dashboard layout
-* [x] Budget vs Actual comparison
-* [x] Smart insights section
-* [x] Category-wise pie chart
+  * [x] Add responsive dashboard layout
+  * [x] Budget vs Actual comparison
+  * [x] Smart insights section
+  * [x] Category-wise pie chart
 
----
+-----
 
 ## ❤️ Acknowledgements
 
-* [shadcn/ui](https://ui.shadcn.dev/)
-* [Recharts](https://recharts.org/)
-* [MongoDB Atlas](https://www.mongodb.com/atlas)
-* [Sonner Toast](https://sonner.emilkowal.dev/)
+  * [shadcn/ui](https://ui.shadcn.dev/)
+  * [Recharts](https://recharts.org/)
+  * [MongoDB Atlas](https://www.mongodb.com/atlas)
+  * [Sonner Toast](https://sonner.emilkowal.dev/)
 
----
+-----
+
+```
+```

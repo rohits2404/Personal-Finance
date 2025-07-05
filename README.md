@@ -1,133 +1,143 @@
-# 💰 Personal Finance Tracker
+```md
+# 💰 Walletly: Personal Finance Tracker
 
-A modern, responsive personal finance tracker built with **Next.js App Router**, **Tailwind CSS**,**ShadCN** and **Recharts**. It allows users to track transactions, visualize monthly expenses, and manage their finances effectively.
+[![Next.js](https://img.shields.io/badge/Next.js-15-blue.svg)](https://nextjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-green.svg)](https://tailwindcss.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-blue.svg)](https://www.typescriptlang.org/)
 
-## 🚀 Features
+**Walletly** A modern, visually polished and responsive **Personal Finance Tracker** built with Next.js App Router, TailwindCSS v4, TypeScript, MongoDB, Recharts, and shadcn/ui.  
+Track your expenses, view charts, set monthly budgets, and get instant insights.
 
-- ✅ Add, view, and delete transactions
-- 📈 Interactive monthly expenses chart
-- 🎨 Beautiful responsive UI with gradients, cards, and modern layout
-- 📦 Modular component structure
-- 🌈 Tailwind CSS + shadcn/ui based design
-- 🔄 API connected (stubbed with `/api/transactions`)
-- 🔒 Clean and type-safe code with TypeScript
+---
 
+## 🌟 Features
 
+- ✨ Add, view, and delete transactions
+- 📊 Monthly bar chart of expenses
+- 🥧 Category-wise pie chart
+- 📋 Dashboard summary with totals and latest transactions
+- 💸 Set monthly budgets for each category
+- ⚖️ Compare Budget vs Actual in a visual chart
+- 💡 Smart insights (Over/Under budget per category)
+- 📅 Monthly selector support
+- 💅 Beautiful UI built with **TailwindCSS + shadcn/ui**
 
-## 🧱 Tech Stack
+---
 
-| Technology     | Purpose                        |
-|-|--|
-| Next.js 15    | React framework (App Router)   |
-| TypeScript     | Type-safe development          |
-| Tailwind CSS   | Utility-first styling          |
-| Recharts       | Bar chart visualizations       |
-| shadcn/ui      | Styled reusable UI components  |
-| Lucide Icons   | Modern, minimal icons          |
-| Sonner         | Beautiful toast notifications  |
+## 📸 Screenshots
 
+> *(Add your own screenshots here)*
 
+| Dashboard Summary | Bar + Pie Charts | Budget + Insights |
+|------------------|------------------|-------------------|
+| ![screenshot1](public/screens/dashboard.png) | ![screenshot2](public/screens/charts.png) | ![screenshot3](public/screens/insights.png) |
 
-## 📁 Folder Structure
+---
+
+## 🧠 Tech Stack
+
+| Technology    | Purpose                        |
+|---------------|--------------------------------|
+| **Next.js 15 App Router** | Routing & frontend framework |
+| **TypeScript**   | Type safety across components |
+| **Tailwind CSS v4** | Utility-first CSS styling |
+| **shadcn/ui**     | UI components with accessibility |
+| **Recharts**      | Bar & pie chart visualizations |
+| **MongoDB**       | Data persistence for budgets & transactions |
+| **Sonner**        | Toast notifications |
+
+---
+
+## 📁 Project Structure
 
 ```
 
 .
 ├── components/
-│   ├── TransactionForm.tsx     # Add transaction form
-│   ├── TransactionList.tsx     # List of transactions
-│   └── ExpensesChart.tsx       # Recharts-based monthly expense chart
+│   ├── TransactionForm.tsx
+│   ├── TransactionList.tsx
+│   ├── ExpensesChart.tsx
+│   ├── CategoryPieChart.tsx
+│   ├── DashboardSummary.tsx
+│   ├── BudgetForm.tsx
+│   ├── BudgetComparisonChart.tsx
+│   ├── SpendingInsights.tsx
+│
+├── types/
+│   └── index.ts
 │
 ├── app/
-│   ├── page.tsx     # Add transaction form
-│   ├── globals.css       # Tailwind Base Styles
+│   ├── page.tsx ( HomePage)
+|   ├── globals.css (Global Styles)
+|
 │
-|── lib/
-│   ├── data/
-    |   |── db.ts     # MongoDB Connection
-│   |   ├── models.ts     # Transaction Model
-│   └── utils.ts       # Shadcn Generated Utils
-|
-├── types/
-│   └── index.ts                # Shared Transaction types
-|
-├── public/                     # Assets (optional)
-├── package.json
+├── public/
+│   └── screens/ (Add screenshots here)
+│
 └── README.md
 
 ````
 
-## 📦 Installation
+---
+
+## 🔧 Getting Started
+
+### 1️⃣ Clone the Repo
 
 ```bash
-# 1. Clone the repo
 git clone https://github.com/rohits2404/Personal-Finance.git
 cd personal-finance
-
-# 2. Install dependencies
-npm install
-
-# 3. MongoDB Connection
-create .env.local
-MONGODB_URL=
-
-# 4. Run the development server
-npm run dev
 ````
 
-Visit `http://localhost:3000` in your browser.
+### 2️⃣ Install Dependencies
 
+```bash
+npm install
+```
 
-## 📋 Transaction Type Definition
+### 3️⃣ Setup Environment Variables
+
+Create a `.env.local` file:
+
+```env
+MONGODB_URI=
+```
+
+### 4️⃣ Run the Dev Server
+
+```bash
+npm run dev
+```
+
+Visit [http://localhost:3000](http://localhost:3000) to view the app.
+
+---
+
+## 🔐 Type Definitions
 
 ```ts
-// /types/index.ts
+// types/index.ts
+
 export interface Transaction {
   _id: string;
   amount: number;
   description: string;
   date: string;
+  category: string;
+}
+
+export interface Budget {
+  _id?: string;
+  month: string;
+  category: string;
+  amount: number;
 }
 ```
 
-## 📊 Chart Logic
+---
 
-Expenses are grouped by `month` using:
+## 📈 Roadmap
 
-```ts
-const grouped = data.reduce((acc, tx) => {
-  const month = new Date(tx.date).toLocaleString('default', { month: 'short', year: 'numeric' });
-  acc[month] = (acc[month] || 0) + tx.amount;
-  return acc;
-}, {});
-```
-
-## 🔧 API (stubbed for now)
-
-Ensure you have a working API route at `/api/transactions` that supports:
-
-* `GET`: Fetch all transactions
-* `POST`: Add a new transaction
-* `DELETE`: Remove a transaction by ID
-
-Sample format:
-
-```json
-{
-  "_id": "abc123",
-  "amount": -1200,
-  "description": "Groceries",
-  "date": "2025-07-05"
-}
-```
-
-
-## 📌 To-Do (Future Improvements)
-
-(Stage 2)
-
-* [ ] Predefined Categories for Transactions
-* [ ] Categories Wise Pie Chart
-* [ ] Dashboard with summary cards: total expenses, category breakdown, most recent transactions
-
-```
+* [x] Add responsive dashboard layout
+* [x] Budget vs Actual comparison
+* [x] Smart insights section

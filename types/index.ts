@@ -5,3 +5,9 @@ export interface Transaction {
     date: string;
     category: string;
 }
+
+export interface Budget {
+    category: string;
+    amount: number;
+    month: string;
+}

@@ -1,5 +1,5 @@
 import { connectDB } from '@/lib/data/db';
-import { Transaction } from '@/lib/data/models';
+import { Transaction } from '@/lib/data/Models/User/models';
 
 export async function GET() {
     await connectDB();
